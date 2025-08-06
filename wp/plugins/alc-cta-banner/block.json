@@ -1,0 +1,13 @@
+{
+  "apiVersion": 2,
+  "name": "alc/cta-banner",
+  "title": "ALC CTA Banner",
+  "category": "widgets",
+  "attributes": {
+    "text": { "type": "string" },
+    "url": { "type": "string" },
+    "bgColor": { "type": "string" }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style.css"
+}

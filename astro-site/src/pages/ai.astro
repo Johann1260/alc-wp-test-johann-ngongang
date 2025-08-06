@@ -1,0 +1,23 @@
+---
+import { useState } from 'react';
+const [prompt, setPrompt] = useState('');
+const [response, setResponse] = useState('');
+
+const handleGenerate = async () => {
+  const res = await fetch('/api/ai', {
+    method: 'POST',
+    body: JSON.stringify({ prompt }),
+    headers: { 'Content-Type': 'application/json' }
+  });
+  const data = await res.json();
+  setResponse(data.result);
+};
+---
+
+<html>
+  <body>
+    <input type="text" value={prompt} onInput={(e) => setPrompt(e.target.value)} />
+    <button onClick={handleGenerate}>Générer</button>
+    <p>{response}</p>
+  </body>
+</html>
